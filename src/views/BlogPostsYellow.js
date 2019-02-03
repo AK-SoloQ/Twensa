@@ -7,9 +7,7 @@ import {
   Col,
   Card,
   CardBody,
-  CardFooter,
-  Badge,
-  Button
+  Badge
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
@@ -201,9 +199,7 @@ class BlogPostsYellow extends React.Component {
   render() {
     const {
       PostsListOne,
-      PostsListTwo,
-      PostsListThree,
-      PostsListFour
+      PostsListTwo
     } = this.state;
 
     return (

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Twensa/precache-manifest.9b0d50fc8a444820e22c1de28408c18b.js"
+  "/Twensa/precache-manifest.9bca94e15e4b2c5bb221695d14a683d2.js"
 );
 
 workbox.clientsClaim();
