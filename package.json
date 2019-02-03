@@ -27,7 +27,7 @@
     "build": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react react-scripts build",
     "test": "react-scripts test",
     "predeploy": "yarn build",
-    "deploy": "gh-paged -d build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
