@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  ButtonGroup,
   Button,
   Row,
   Col
@@ -14,7 +13,7 @@ import {
 const Discussions = ({ title, discussions }) => (
   <Card small className="blog-comments">
     <CardHeader className="border-bottom">
-      <h6 className="m-0">{title}</h6>
+      <h6 className="m-0">Les commentaire</h6>
     </CardHeader>
 
     <CardBody className="p-0">
@@ -43,28 +42,6 @@ const Discussions = ({ title, discussions }) => (
             <p className="m-0 my-1 mb-2 text-muted">{discussion.body}</p>
 
             {/* Content :: Actions */}
-            <div className="blog-comments__actions">
-              <ButtonGroup size="sm">
-                <Button theme="white">
-                  <span className="text-success">
-                    <i className="material-icons">check</i>
-                  </span>{" "}
-                  Approve
-                </Button>
-                <Button theme="white">
-                  <span className="text-danger">
-                    <i className="material-icons">clear</i>
-                  </span>{" "}
-                  Reject
-                </Button>
-                <Button theme="white">
-                  <span className="text-light">
-                    <i className="material-icons">more_vert</i>
-                  </span>{" "}
-                  Edit
-                </Button>
-              </ButtonGroup>
-            </div>
           </div>
         </div>
       ))}
@@ -74,7 +51,7 @@ const Discussions = ({ title, discussions }) => (
       <Row>
         <Col className="text-center view-report">
           <Button theme="white" type="submit">
-            View All Comments
+            Voir tous les commentaires
           </Button>
         </Col>
       </Row>
@@ -98,35 +75,35 @@ Discussions.defaultProps = {
   discussions: [
     {
       id: 1,
-      date: "3 days ago",
+      date: "il y a 3 jours",
       author: {
         image: require("../../images/avatars/1.jpg"),
         name: "John Doe",
         url: "#"
       },
       post: {
-        title: "Hello World!",
+        title: "Bonjour!",
         url: "#"
       },
-      body: "Well, the way they make shows is, they make one show ..."
+      body: "loreIn elit tempor exercitation dolor magna."
     },
     {
       id: 2,
-      date: "4 days ago",
+      date: "il y a 4 jours",
       author: {
         image: require("../../images/avatars/2.jpg"),
-        name: "John Doe",
+        name: "Ahmed Abd",
         url: "#"
       },
       post: {
-        title: "Hello World!",
+        title: "ما هو لوريم ايبسوم!",
         url: "#"
       },
-      body: "After the avalanche, it took us a week to climb out. Now..."
+      body: "لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ..."
     },
     {
       id: 3,
-      date: "5 days ago",
+      date: "il y a 5 jours",
       author: {
         image: require("../../images/avatars/3.jpg"),
         name: "John Doe",

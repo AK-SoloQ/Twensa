@@ -206,9 +206,8 @@ class BlogPostsRed extends React.Component {
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="Blog Posts" subtitle="Components" className="text-sm-left" />
+          <PageTitle sm="4" title="Welcome to Red Zone" subtitle="Red Zone" className="text-sm-left" />
         </Row>
-        <h1> Welcome to Red Zone</h1>
         {/* First Row of Posts */}
         <Row>
           {PostsListOne.map((post, idx) => (
