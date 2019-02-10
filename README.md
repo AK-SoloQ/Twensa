@@ -1,24 +1,10 @@
-<p align="center">
-<a href="https://designrevision.com/downloads/shards-dashboard-lite-react/">
-<img src="assets/preview.png" width="250" />
-</a>
-</p>
+<h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;"><a href="https://designrevision.com/downloads/shards-dashboard-lite-react/">Twensa</a></h1>
 
-<h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;"><a href="https://designrevision.com/downloads/shards-dashboard-lite-react/">Shards Dashboard React</a></h1>
-<p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
-  </a>
-  <a href="https://twitter.com/designrevision">
-    <img src="https://img.shields.io/twitter/follow/DesignRevision.svg?style=social&label=Follow" />
-  </a>
-</p>
 
 <p align="center">
-A free React admin dashboard template pack featuring a modern design system <br />  and lots of custom templates and components.
+Reprehenderit mollit ad eiusmod ad sit fugiat cillum aliqua. <br />  Ea est duis nostrud mollit tempor aliqua aute ea aute laborum adipisicing labore sint aliqua.
 </p>
-
-<p align="center">
+<!-- <p align="center">
   <a href="https://designrevision.com/demo/shards-dashboard-lite-react">
     <img height="55px" src="assets/btn-live-preview.png" />
   </a>
@@ -26,20 +12,18 @@ A free React admin dashboard template pack featuring a modern design system <br 
     <img height="55px" src="assets/btn-learn-more.png" />
   </a>
 </p>
+-->
 
 <br />
-
+<!-- 
 <p align="center">
 <a href="https://designrevision.com/downloads/shards-dashboard-lite-react">
 <img src="assets/demo-preview.gif" width="650" />
 </a>
 </p>
-
+-->
 <br />
 
-> ✨ **Note:** You can download the Sketch files from the official product page.
-
-<br />
 
 ### Quick Start
 
@@ -84,24 +68,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 
 <br />
-
-### 🌟 Pro Version
-
-If you're looking for something more, check out [Shards Dashboard Pro React](https://designrevision.com/downloads/shards-dashboard-pro-react/) which features many more custom templates and components. Use the `GITHUB15` coupon code for a **15% discount off the current price**.
-
-<br />
-
-### Built using
-
-- [Shards React](https://github.com/designrevision/shards-react)
-- [Chart.js](https://www.chartjs.org/)
-- [Flux](https://facebook.github.io/flux/)
-- [No UI Slider](https://refreshless.com/nouislider/)
-- [React Datepicker](https://www.npmjs.com/package/react-datepicker)
-- [Quill](https://quilljs.com/)
-
-<br />
-
-### Changelog
-
-Please check out the [CHANGELOG](CHANGELOG.md).
