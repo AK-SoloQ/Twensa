@@ -6,6 +6,7 @@ import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
 import NewDraft from "./../components/blog/NewDraft";
 import Discussions from "./../components/blog/Discussions";
+import UserDetails from "./../components/user-profile-lite/UserDetails"
 
 const BlogOverview = ({ smallStats }) => (
   <Container fluid className="main-content-container px-4">
@@ -43,7 +44,9 @@ const BlogOverview = ({ smallStats }) => (
       <Col lg="6" md="6" sm="12" className="mb-4">
         <NewDraft />
       </Col>
-
+        <Col>
+        <UserDetails lg="12" md="12" sm="12" className="mb-4"/>
+        </Col>
 
     </Row>
   </Container>
