@@ -4,8 +4,7 @@ import {
   Card,
   CardHeader,
   ListGroup,
-  ListGroupItem,
-  Progress
+  ListGroupItem
 } from "shards-react";
 
 const UserDetails = ({ userDetails }) => (

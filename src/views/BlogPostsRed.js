@@ -20,66 +20,66 @@ class BlogPostsRed extends React.Component {
       // First list of posts.
       PostsListOne: [
         {
-          backgroundImage: require("../images/content-management/1.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpeg",
           category: "Red",
           categoryTheme: "danger",
           author: "Anna Kunis",
-          authorAvatar: require("../images/avatars/1.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpeg",
           title: "Conduct at an replied removal an amongst",
           body:
             "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
           date: "28 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/2.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/2.jpeg",
           category: "Blue",
           categoryTheme: "royal-blue",
           author: "James Jamerson",
-          authorAvatar: require("../images/avatars/2.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/2.jpeg",
           title: "Off tears are day blind smile alone had ready",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/3.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpeg",
           category: "Blue",
           categoryTheme: "royal-blue",
           author: "Jimmy Jackson",
-          authorAvatar: require("../images/avatars/2.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/2.jpeg",
           title: "Difficult in delivered extensive at direction",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/4.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/4.jpeg",
           category: "Red",
           categoryTheme: "danger",
           author: "John James",
-          authorAvatar: require("../images/avatars/3.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpeg",
           title: "It so numerous if he may outlived disposal",
           body:
             "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/5.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/5.jpeg",
           category: "Yellow",
           categoryTheme: "warning",
           author: "John James",
-          authorAvatar: require("../images/avatars/3.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpeg",
           title: "It so numerous if he may outlived disposal",
           body:
             "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/6.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/6.jpeg",
           category: "Yellow",
           categoryTheme: "warning",
           author: "John James",
-          authorAvatar: require("../images/avatars/3.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpeg",
           title: "It so numerous if he may outlived disposal",
           body:
             "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
@@ -90,11 +90,11 @@ class BlogPostsRed extends React.Component {
       // Second list of posts.
       PostsListTwo: [
         {
-          backgroundImage: require("../images/content-management/5.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/5.jpeg",
           category: "Blue",
           categoryTheme: "royal-blue",
           author: "Anna Ken",
-          authorAvatar: require("../images/avatars/0.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/6.jpeg",
           title:
             "Attention he extremity unwilling on otherwise cars backwards yet",
           body:
@@ -102,11 +102,11 @@ class BlogPostsRed extends React.Component {
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/6.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/6.jpeg",
           category: "Red",
           categoryTheme: "danger",
           author: "John James",
-          authorAvatar: require("../images/avatars/1.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpeg",
           title:
             "Totally words widow one downs few age every seven if miss part by fact",
           body:
@@ -120,7 +120,7 @@ class BlogPostsRed extends React.Component {
       PostsListThree: [
         {
           author: "John James",
-          authorAvatar: require("../images/avatars/1.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpg",
           title: "Had denoting properly jointure which well books beyond",
           body:
             "In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom work...",
@@ -128,7 +128,7 @@ class BlogPostsRed extends React.Component {
         },
         {
           author: "John James",
-          authorAvatar: require("../images/avatars/2.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/2.jpg",
           title: "Husbands ask repeated resolved but laughter debating",
           body:
             "It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears...",
@@ -136,7 +136,7 @@ class BlogPostsRed extends React.Component {
         },
         {
           author: "John James",
-          authorAvatar: require("../images/avatars/3.jpg"),
+          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpg",
           title:
             "Instantly gentleman contained belonging exquisite now direction",
           body:
@@ -148,7 +148,7 @@ class BlogPostsRed extends React.Component {
       // Fourth list of posts.
       PostsListFour: [
         {
-          backgroundImage: require("../images/content-management/7.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/7.jpeg",
           author: "Alene Trenton",
           authorUrl: "#",
           category: "News",
@@ -159,7 +159,7 @@ class BlogPostsRed extends React.Component {
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/8.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/8.jpeg",
           author: "Chris Jamie",
           authorUrl: "#",
           category: "News",
@@ -170,7 +170,7 @@ class BlogPostsRed extends React.Component {
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/9.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/9.jpeg",
           author: "Monica Jordan",
           authorUrl: "#",
           category: "News",
@@ -181,7 +181,7 @@ class BlogPostsRed extends React.Component {
           date: "29 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/10.jpeg"),
+          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/10.jpeg",
           author: "Monica Jordan",
           authorUrl: "#",
           category: "News",
