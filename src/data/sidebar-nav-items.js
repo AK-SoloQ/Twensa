@@ -2,22 +2,22 @@ export default function() {
   return [
     {
       title: "Accueil",
-      to: "/blog-overview",
-      htmlBefore: '<i class="material-icons">edit</i>',
+      to: "/Accueil",
+      htmlBefore: '<i class="material-icons">home</i>',
       htmlAfter: ""
     },
     {
       title: "Blue Blog",
-      htmlBefore: '<i class="material-icons">event_available</i>',
-      to: "/blog-posts",
+      htmlBefore: '<i class="material-icons">directions_run</i>',
+      to: "/blog-blue",
     }, {
       title: "Red Blog",
       htmlBefore: '<i class="material-icons">event_available</i>',
-      to: "/blog-posts-red",
+      to: "/blog-red",
     }, {
       title: "Yellow Blog",
       htmlBefore: '<i class="material-icons">event_available</i>',
-      to: "/blog-posts-yellow",
+      to: "/blog-yellow",
     }/*,
     {
       title: "Add New Post",
