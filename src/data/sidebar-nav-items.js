@@ -8,15 +8,15 @@ export default function() {
     },
     {
       title: "Blue Blog",
-      htmlBefore: '<i class="material-icons">directions_run</i>',
+      htmlBefore: '<i class="material-icons">fitness_center</i>',
       to: "/blog-blue",
     }, {
       title: "Red Blog",
-      htmlBefore: '<i class="material-icons">event_available</i>',
+      htmlBefore: '<i class="material-icons">business_center</i>',
       to: "/blog-red",
     }, {
       title: "Yellow Blog",
-      htmlBefore: '<i class="material-icons">event_available</i>',
+      htmlBefore: '<i class="material-icons">terrain</i>',
       to: "/blog-yellow",
     }/*,
     {
