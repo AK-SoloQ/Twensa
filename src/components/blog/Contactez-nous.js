@@ -11,7 +11,7 @@ import {
   Button
 } from "shards-react";
 
-const NewDraft = ({ title }) => (
+const ContactezNous = ({ title }) => (
   <Card small className="h-100">
     {/* Card Header */}
     <CardHeader className="border-bottom">
@@ -41,15 +41,15 @@ const NewDraft = ({ title }) => (
   </Card>
 );
 
-NewDraft.propTypes = {
+ContactezNous.propTypes = {
   /**
    * The component's title.
    */
   title: PropTypes.string
 };
 
-NewDraft.defaultProps = {
+ContactezNous.defaultProps = {
   title: "New Draft"
 };
 
-export default NewDraft;
+export default ContactezNous;

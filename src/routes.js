@@ -5,15 +5,11 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-/*import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";*/
-import BlogOverview from "./views/BlogOverview";
-import BlogPosts from "./views/BlogPosts";
-import BlogPostsRed from "./views/BlogPostsRed";
-import BlogPostsYellow from "./views/BlogPostsYellow";
+import Accueil from "./views/Accueil";
+import BlogPosts from "./views/BlueBlogPosts";
+import BlogPostsRed from "./views/RedBlogPosts";
+import BlogPostsYellow from "./views/YellowBlogPosts";
 
 export default [
   {
@@ -25,7 +21,7 @@ export default [
   {
     path: "/Accueil",
     layout: DefaultLayout,
-    component: BlogOverview 
+    component: Accueil 
   },
   {
     path: "/blog-blue",
@@ -41,6 +37,11 @@ export default [
     path: "/blog-yellow",
     layout: DefaultLayout,
     component: BlogPostsYellow
+  },
+  {
+    path: "/errors",
+    layout: DefaultLayout,
+    component: Errors
   }/** 
   ,{
     path: "/user-profile-lite",
@@ -51,12 +52,7 @@ export default [
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
-  },
-  {
-    path: "/errors",
-    layout: DefaultLayout,
-    component: Errors
-  },
+  },,
   {
     path: "/components-overview",
     layout: DefaultLayout,

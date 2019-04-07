@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col } from "shards-react";
 
-import PageTitle from "./../components/common/PageTitle";
-import SmallStats from "./../components/common/SmallStats";
-import NewDraft from "./../components/blog/NewDraft";
-import Discussions from "./../components/blog/Discussions";
-import UserDetails from "./../components/user-profile-lite/UserDetails"
+import PageTitle from "../components/common/PageTitle";
+import SmallStats from "../components/common/SmallStats";
+import ContactezNous from "../components/blog/Contactez-nous";
+import Commentaires from "../components/blog/Commentaires";
+import CardDetails from "../components/card-lite/CardDetails"
 
-const BlogOverview = ({ smallStats }) => (
+const Accueil = ({ smallStats }) => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
@@ -36,30 +36,30 @@ const BlogOverview = ({ smallStats }) => (
 
     <Row>
 
-      {/* Discussions */}
+      {/* Commentaires */}
       <Col lg="6" md="12" sm="12" className="mb-4">
-        <Discussions />
+        <Commentaires />
       </Col>
       {/* New Draft */}
       <Col lg="6" md="6" sm="12" className="mb-4">
-        <NewDraft />
+        <ContactezNous />
       </Col>
         <Col>
-        <UserDetails lg="12" md="12" sm="12" className="mb-4"/>
+        <CardDetails lg="12" md="12" sm="12" className="mb-4"/>
         </Col>
 
     </Row>
   </Container>
 );
 
-BlogOverview.propTypes = {
+Accueil.propTypes = {
   /**
    * The small stats dataset.
    */
   smallStats: PropTypes.array
 };
 
-BlogOverview.defaultProps = {
+Accueil.defaultProps = {
   smallStats: [
     {
       label: "Les dons",
@@ -138,4 +138,4 @@ BlogOverview.defaultProps = {
   ]
 };
 
-export default BlogOverview;
+export default Accueil;

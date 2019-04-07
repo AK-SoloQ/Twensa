@@ -11,7 +11,7 @@ import {
 
 import axios from 'axios'
 
-class UserDetails extends React.Component {
+class CardDetails extends React.Component {
   constructor(props) {
     super(props);
     axios.get('http://fetchrss.com/rss/5ca7dac78a93f8b54b8b45675ca7da878a93f8a94a8b4567.xml')
@@ -79,11 +79,11 @@ class UserDetails extends React.Component {
     /**
      * The user details object.
      */
-    userDetails: PropTypes.object
+    cardDetails: PropTypes.object
   };
 
   defaultProps = {
-    userDetails: {
+    cardDetails: {
       name: "Sierra Brooks",
       avatar: require("./../../images/avatars/0.jpg"),
       jobTitle: "Project Manager",
@@ -99,4 +99,4 @@ class UserDetails extends React.Component {
 
 
 
-export default UserDetails;
+export default CardDetails;

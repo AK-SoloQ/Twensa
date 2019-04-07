@@ -18,6 +18,11 @@ export default function() {
       title: "Yellow Blog",
       htmlBefore: '<i class="material-icons">terrain</i>',
       to: "/blog-yellow",
+    },
+    {
+      title: "Errors",
+      htmlBefore: '<i class="material-icons">error</i>',
+      to: "/errors",
     }/*,
     {
       title: "Add New Post",
@@ -38,11 +43,6 @@ export default function() {
       title: "User Profile",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/user-profile-lite",
-    },
-    {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors",
     }*/
   ];
 }

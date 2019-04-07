@@ -10,7 +10,7 @@ import {
   Col
 } from "shards-react";
 
-const Discussions = ({ title, discussions }) => (
+const Commentaires = ({ title, discussions }) => (
   <Card small className="blog-comments">
     <CardHeader className="border-bottom">
       <h6 className="m-0">Les commentaire</h6>
@@ -59,7 +59,7 @@ const Discussions = ({ title, discussions }) => (
   </Card>
 );
 
-Discussions.propTypes = {
+Commentaires.propTypes = {
   /**
    * The component's title.
    */
@@ -70,8 +70,8 @@ Discussions.propTypes = {
   discussions: PropTypes.array
 };
 
-Discussions.defaultProps = {
-  title: "Discussions",
+Commentaires.defaultProps = {
+  title: "Commentaires",
   discussions: [
     {
       id: 1,
@@ -118,4 +118,4 @@ Discussions.defaultProps = {
   ]
 };
 
-export default Discussions;
+export default Commentaires;
