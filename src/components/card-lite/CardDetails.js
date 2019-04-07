@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Row, Col } from "shards-react";
 
 
 import {
@@ -9,28 +10,107 @@ import {
   ListGroupItem
 } from "shards-react";
 
-import axios from 'axios'
+import jsonData from './../../data/twensa.json'
 
 class CardDetails extends React.Component {
   constructor(props) {
     super(props);
-    axios.get('http://fetchrss.com/rss/5ca7dac78a93f8b54b8b45675ca7da878a93f8a94a8b4567.xml')
-      .then(response => console.log({response}))
-      .catch(e => {
-        console.log('error get xml ', e)
-      })
-    fetch('http://fetchrss.com/rss/5ca7dac78a93f8b54b8b45675ca7da878a93f8a94a8b4567.xml')
-      .then(response => response.text())
-      .then((response) => {
-          console.log(response)
-      }).catch((err) => {
-        console.log('fetch Erreur', err)
-      })
+    const loadData =  JSON.parse(JSON.stringify(jsonData));
+    this.state = {
+      posts : loadData.rss.channel.item
+    }
+  }
+  renderImages(post) {
+    if (typeof post.enclosure !== 'object') {
+      return (
+        <div>
+          null
+        </div>
+      )
+    }else {
+      const image = post.enclosure.url
+      return (
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+            
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100" src={image} width="400" height="400" alt="First slide" />
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
+        </div>
+      )
+    }
+    
+  }
+  renderPostes () {
+    return this.state.posts.map(post => {
+      return (
+        <Col lg="6" md="6" sm="6" className="mb-4" >
+        <Card small className="mb-4 pt-3">
+          <CardHeader className="border-bottom text-center">
+            <div className="mb-3 mx-auto">
+              {this.renderImages(post)}
+            </div>
+          </CardHeader>
+          <ListGroup flush>
+            <ListGroupItem className="p-4">
+              <strong className="text-muted d-block mb-2">
+                {post.title}
+              </strong>
+              <span>{post.description}</span>
+              <span><a href={post.guid}>... lire la suite</a></span>
+            </ListGroupItem>
+          </ListGroup>
+        </Card>
+        </Col>
+      )
+    })
   }
   render() {
     return (
-      <div>
-        <Card small className="mb-4 pt-3">
+      <Row>
+        {this.renderPostes()}
+      </Row>
+    )
+  }
+  propTypes = {
+    /**
+     * The user details object.
+     */
+    cardDetails: PropTypes.object
+  };
+
+  defaultProps = {
+    cardDetails: {
+      name: "Sierra Brooks",
+      avatar: require("./../../images/avatars/0.jpg"),
+      jobTitle: "Project Manager",
+      performanceReportTitle: "Workload",
+      performanceReportValue: 74,
+      metaTitle: "Description",
+      metaValue:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?"
+    }
+  };
+}
+
+
+
+
+export default CardDetails;
+/**
+ * <Card small className="mb-4 pt-3">
           <CardHeader className="border-bottom text-center">
             <div className="mb-3 mx-auto">
               <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -70,33 +150,4 @@ class CardDetails extends React.Component {
             </ListGroupItem>
           </ListGroup>
         </Card>
-
-      </div>
-
-    )
-  }
-  propTypes = {
-    /**
-     * The user details object.
-     */
-    cardDetails: PropTypes.object
-  };
-
-  defaultProps = {
-    cardDetails: {
-      name: "Sierra Brooks",
-      avatar: require("./../../images/avatars/0.jpg"),
-      jobTitle: "Project Manager",
-      performanceReportTitle: "Workload",
-      performanceReportValue: 74,
-      metaTitle: "Description",
-      metaValue:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?"
-    }
-  };
-}
-
-
-
-
-export default CardDetails;
+ */

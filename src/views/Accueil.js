@@ -8,49 +8,55 @@ import ContactezNous from "../components/blog/Contactez-nous";
 import Commentaires from "../components/blog/Commentaires";
 import CardDetails from "../components/card-lite/CardDetails"
 
-const Accueil = ({ smallStats }) => (
-  <Container fluid className="main-content-container px-4">
-    {/* Page Header */}
-    <Row noGutters className="page-header py-4">
-      <PageTitle title="Accueil " subtitle="Accueil" className="text-sm-left mb-3" />
-    </Row>
 
-    {/* Small Stats Blocks */}
-    <Row>
-      {smallStats.map((stats, idx) => (
-        <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
-          <SmallStats
-            id={`small-stats-${idx}`}
-            variation="1"
-            chartData={stats.datasets}
-            chartLabels={stats.chartLabels}
-            label={stats.label}
-            value={stats.value}
-            percentage={stats.percentage}
-            increase={stats.increase}
-            decrease={stats.decrease}
-          />
-        </Col>
-      ))}
-    </Row>
+class Accueil  extends React.Component  {
 
-    <Row>
+  render () {
+    return (
+      <Container fluid className="main-content-container px-4">
+        {/* Page Header */}
+        <Row noGutters className="page-header py-4">
+          <PageTitle title="Accueil " subtitle="Accueil" className="text-sm-left mb-3" />
+        </Row>
+        {/* All Postes */}
+          <CardDetails />
+        {/* Small Stats Blocks */}
+        <Row>
+          {this.props.smallStats.map((stats, idx) => (
+            <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
+              <SmallStats
+                id={`small-stats-${idx}`}
+                variation="1"
+                chartData={stats.datasets}
+                chartLabels={stats.chartLabels}
+                label={stats.label}
+                value={stats.value}
+                percentage={stats.percentage}
+                increase={stats.increase}
+                decrease={stats.decrease}
+              />
+            </Col>
+          ))}
+        </Row>
 
-      {/* Commentaires */}
-      <Col lg="6" md="12" sm="12" className="mb-4">
-        <Commentaires />
-      </Col>
-      {/* New Draft */}
-      <Col lg="6" md="6" sm="12" className="mb-4">
-        <ContactezNous />
-      </Col>
-        <Col>
-        <CardDetails lg="12" md="12" sm="12" className="mb-4"/>
-        </Col>
+        <Row>
 
-    </Row>
-  </Container>
-);
+          {/* Commentaires */}
+          <Col lg="6" md="12" sm="12" className="mb-4">
+            <Commentaires />
+          </Col>
+          {/* New Draft */}
+          <Col lg="6" md="6" sm="12" className="mb-4">
+            <ContactezNous />
+          </Col>
+          
+
+        </Row>
+      </Container>
+    )
+  }
+}
+
 
 Accueil.propTypes = {
   /**
