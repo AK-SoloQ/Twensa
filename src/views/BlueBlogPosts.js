@@ -12,17 +12,32 @@ import {
 
 import PageTitle from "../components/common/PageTitle";
 
+import jsonData from './../data/twensa.json'
+
 class BlogPosts extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    const loadData = JSON.parse(JSON.stringify(jsonData));
+    const PostsLists = loadData.rss.channel.item.map(post => {
+      return {
+        backgroundImage: post.enclosure.url,
+        category: "Blue",
+        categoryTheme: "royal-blue",
+        authorAvatar: "https://scontent.ftun3-1.fna.fbcdn.net/v/t1.0-9/49603515_2274317769285291_8872662573879656448_n.png?_nc_cat=104&_nc_ht=scontent.ftun3-1.fna&oh=4e50f0b8ce2ea25ba18af0df8425231e&oe=5CED4706",
+        title: post.title,
+        body: post.description,
+        date : post.pubDate
+      }
+    })
+    this.state = { 
       // First list of posts.
+      PostsLists,
       PostsListOne: [
         {
           backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpeg",
           category: "Red",
-          categoryTheme: "danger",
+          categoryTheme: "royal-blue",
           author: "Anna Kunis",
           authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpeg",
           title: "Conduct at an replied removal an amongst",
@@ -115,91 +130,14 @@ class BlogPosts extends React.Component {
         }
       ],
 
-      // Third list of posts.
-      /*
-      PostsListThree: [
-        {
-          author: "John James",
-          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/1.jpg",
-          title: "Had denoting properly jointure which well books beyond",
-          body:
-            "In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom work...",
-          date: "29 February 2019"
-        },
-        {
-          author: "John James",
-          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/2.jpg",
-          title: "Husbands ask repeated resolved but laughter debating",
-          body:
-            "It abode words began enjoy years no do ﻿no. Tried spoil as heart visit blush or. Boy possible blessing sensible set but margaret interest. Off tears...",
-          date: "29 February 2019"
-        },
-        {
-          author: "John James",
-          authorAvatar: "https://designrevision.com/demo/shards-dashboards/images/content-management/3.jpg",
-          title:
-            "Instantly gentleman contained belonging exquisite now direction",
-          body:
-            "West room at sent if year. Numerous indulged distance old law you. Total state as merit court green decay he. Steepest merit checking railway...",
-          date: "29 February 2019"
-        }
-      ],
-
-      // Fourth list of posts.
-      PostsListFour: [
-        {
-          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/7.jpeg",
-          author: "Alene Trenton",
-          authorUrl: "#",
-          category: "News",
-          categoryUrl: "#",
-          title: "Extremity so attending objection as engrossed",
-          body:
-            "Pursuit chamber as elderly amongst on. Distant however warrant farther to of. My justice wishing prudent waiting in be...",
-          date: "29 February 2019"
-        },
-        {
-          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/8.jpeg",
-          author: "Chris Jamie",
-          authorUrl: "#",
-          category: "News",
-          categoryUrl: "#",
-          title: "Bed sincerity yet therefore forfeited his",
-          body:
-            "Speaking throwing breeding betrayed children my to. Me marianne no he horrible produced ye. Sufficient unpleasing and...",
-          date: "29 February 2019"
-        },
-        {
-          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/9.jpeg",
-          author: "Monica Jordan",
-          authorUrl: "#",
-          category: "News",
-          categoryUrl: "#",
-          title: "Object remark lively all did feebly excuse our",
-          body:
-            "Morning prudent removal an letters by. On could my in order never it. Or excited certain sixteen it to parties colonel not seeing...",
-          date: "29 February 2019"
-        },
-        {
-          backgroundImage: "https://designrevision.com/demo/shards-dashboards/images/content-management/10.jpeg",
-          author: "Monica Jordan",
-          authorUrl: "#",
-          category: "News",
-          categoryUrl: "#",
-          title: "His followed carriage proposal entrance",
-          body:
-            "For county now sister engage had season better had waited. Occasional mrs interested far expression directly as regard...",
-          date: "29 February 2019"
-        }
-      ]
-    */
+     
     };
   }
 
   render() {
     const {
-      PostsListOne,
-      PostsListTwo
+      PostsLists,
+      PostsListOne
     } = this.state;
 
     return (
@@ -207,6 +145,35 @@ class BlogPosts extends React.Component {
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="Welcome to Blue Zone" subtitle="Blue Zone" className="text-sm-left" />
+        </Row>
+        {/* List Row of Posts */}
+        <Row>
+          {PostsLists.map((post, idx) => (
+            <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
+              <Card small className="card-post card-post--1">
+                <div
+                  className="card-post__image"
+                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
+                >
+                  <Badge
+                    pill
+                    className={`card-post__category bg-${post.categoryTheme}`}
+                  >
+                    {post.category}
+                  </Badge>
+                </div>
+                <CardBody>
+                  <h5 className="card-title">
+                    <a href="#" className="text-fiord-blue">
+                      {post.title}
+                    </a>
+                  </h5>
+                  <p className="card-text d-inline-block mb-3">{post.body}</p>
+                  <span className="text-muted">{post.date}</span>
+                </CardBody>
+              </Card>
+            </Col>
+          ))}
         </Row>
         {/* First Row of Posts */}
         <Row>
@@ -237,10 +204,8 @@ class BlogPosts extends React.Component {
             </Col>
           ))}
         </Row>
-
-        {/* Second Row of Posts */}
         <Row>
-          {PostsListTwo.map((post, idx) => (
+          {PostsLists.map((post, idx) => (
             <Col lg="6" sm="12" className="mb-4" key={idx}>
               <Card small className="card-post card-post--aside card-post--1">
                 <div
@@ -267,76 +232,7 @@ class BlogPosts extends React.Component {
             </Col>
           ))}
         </Row>
-
-        {/* Third Row of Posts
-        <Row>
-          {PostsListThree.map((post, idx) => (
-            <Col lg="4" key={idx}>
-              <Card small className="card-post mb-4">
-                <CardBody>
-                  <h5 className="card-title">{post.title}</h5>
-                  <p className="card-text text-muted">{post.body}</p>
-                </CardBody>
-                <CardFooter className="border-top d-flex">
-                  <div className="card-post__author d-flex">
-                    <a
-                      href="#"
-                      className="card-post__author-avatar card-post__author-avatar--small"
-                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
-                    >
-                      Written by James Khan
-                    </a>
-                    <div className="d-flex flex-column justify-content-center ml-3">
-                      <span className="card-post__author-name">
-                        {post.author}
-                      </span>
-                      <small className="text-muted">{post.date}</small>
-                    </div>
-                  </div>
-                  <div className="my-auto ml-auto">
-                    <Button size="sm" theme="white">
-                      <i className="far fa-bookmark mr-1" /> Bookmark
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-
-        {/* Fourth Row of posts }
-        <Row>
-          {PostsListFour.map((post, idx) => (
-            <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
-              <Card small className="card-post h-100">
-                <div
-                  className="card-post__image"
-                  style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-                />
-                <CardBody>
-                  <h5 className="card-title">
-                    <a className="text-fiord-blue" href="#">
-                      {post.title}
-                    </a>
-                  </h5>
-                  <p className="card-text">{post.body}</p>
-                </CardBody>
-                <CardFooter className="text-muted border-top py-3">
-                  <span className="d-inline-block">
-                    By
-                    <a className="text-fiord-blue" href={post.authorUrl}>
-                      {post.author}
-                    </a>{" "}
-                    in
-                    <a className="text-fiord-blue" href={post.categoryUrl}>
-                      {post.category}
-                    </a>
-                  </span>
-                </CardFooter>
-              </Card>
-            </Col>
-          ))}
-          </Row>*/}
+        
       </Container>
     );
   }

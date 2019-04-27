@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Row, Col } from "shards-react";
+import _ from 'lodash'
 
 
 import {
@@ -10,99 +10,85 @@ import {
   ListGroupItem
 } from "shards-react";
 
-import jsonData from './../../data/twensa.json'
 
 class CardDetails extends React.Component {
   constructor(props) {
     super(props);
-    const loadData =  JSON.parse(JSON.stringify(jsonData));
-    this.state = {
-      posts : loadData.rss.channel.item
-    }
+    this.state = {}
+    this.onChange()
   }
-  renderImages(post) {
-    if (typeof post.enclosure !== 'object') {
+  onChange() {
+    fetch('https://twensa-fdc73.firebaseio.com/.json')
+      .then(response => response.json())
+      .then(response => _.values(response))
+      .then(response => {
+        console.log(response)
+        this.setState({ posts: response })
+      })
+  }
+  renderImages(images, index) {
+    console.log(images)
       return (
-        <div>
-          null
-        </div>
-      )
-    }else {
-      const image = post.enclosure.url
-      return (
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <div id={`carouselExampleIndicators${index}`} className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-            
+          {
+            images.map( (image,index) =>(<li data-target="#carouselExampleIndicators" data-slide-to={index} key={index} className={index === 0 ? 'active': ''}></li>)) 
+          } 
           </ol>
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img className="d-block w-100" src={image} width="400" height="400" alt="First slide" />
-            </div>
+            {
+              images.map((image, index) => (
+                <div className={index === 0 ? 'carousel-item active' : 'carousel-item' } key={index} >
+                  <img className="d-block w-100" src={image} width="400" height="400" alt={`First ${index} `} />
+                </div>
+              ))
+            } 
+            
           </div>
-          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          
+          <a className="carousel-control-prev" href={`#carouselExampleIndicators${index}`} role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
           </a>
-          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <a className="carousel-control-next" href={`#carouselExampleIndicators${index}`} role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
           </a>
         </div>
       )
-    }
     
   }
   renderPostes () {
-    return this.state.posts.map(post => {
-      return (
-        <Col lg="6" md="6" sm="6" className="mb-4" >
+    return this.state.posts.map((post, index) => 
+       (
+        <Col lg="6" md="6" sm="6" className="mb-4" key={index}>
         <Card small className="mb-4 pt-3">
           <CardHeader className="border-bottom text-center">
             <div className="mb-3 mx-auto">
-              {this.renderImages(post)}
-            </div>
+              {this.renderImages(post.post.images, index)}
+            </div> 
           </CardHeader>
           <ListGroup flush>
             <ListGroupItem className="p-4">
               <strong className="text-muted d-block mb-2">
-                {post.title}
+                {post.post.title}
               </strong>
-              <span>{post.description}</span>
+              <span>{post.post.description}</span>
               <span><a href={post.guid}>... lire la suite</a></span>
             </ListGroupItem>
           </ListGroup>
         </Card>
         </Col>
       )
-    })
+    )
   }
   render() {
     return (
       <Row>
-        {this.renderPostes()}
+        {this.state.posts ? this.renderPostes() : (<h1> Loading....</h1>)}
       </Row>
     )
   }
-  propTypes = {
-    /**
-     * The user details object.
-     */
-    cardDetails: PropTypes.object
-  };
-
-  defaultProps = {
-    cardDetails: {
-      name: "Sierra Brooks",
-      avatar: require("./../../images/avatars/0.jpg"),
-      jobTitle: "Project Manager",
-      performanceReportTitle: "Workload",
-      performanceReportValue: 74,
-      metaTitle: "Description",
-      metaValue:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?"
-    }
-  };
 }
 
 
